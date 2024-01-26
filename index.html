@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>CallAPI</title>
+</head>
+<body>
+    <form style="width: auto" class="menu d-flex my-3">
+            <div class="form-group m-auto">
+              <input required type="text" class="form-control" id="name" placeholder="name">
+            </div>
+            <div class="form-group m-auto">
+                <input required type="text" class="form-control" id="avatar" placeholder="avatar">
+            </div>
+            <div class="form-group m-auto">
+                <input required type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="email">
+            </div>
+            <div class="form-group m-auto">
+                <input required type="text" class="form-control" id="city" placeholder="city">
+            </div>
+            <div class="form-group m-auto">
+                <input type="text" class="form-control" id="id" placeholder="Nhập id">
+            </div>
+        <select class="custom-select" id="inputGroupSelect01" style="width: 200px;">
+            <option disabled selected>Chọn phương thức</option>
+            <option value="get">GET</option>
+            <option value="post">POST</option>
+            <option value="put">PUT</option>
+            <option value="delete">DELETE</option>
+          </select>
+        <button type="submit" class="btn btn-primary submit" style="height: 38px; background-color: rgb(96, 167, 96);">
+            <img src="./assets/img/check.svg" alt="">
+        </button>
+      </form>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Avatar</th>
+            <th scope="col">Email</th>
+            <th scope="col">City</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/callAPI.js"></script>
+    <script src="./assets/js/renderApi.js"></script>
+</body>
+</html>
