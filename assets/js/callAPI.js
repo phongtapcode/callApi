@@ -58,20 +58,32 @@ buttonSubmit.addEventListener("click",(e)=>{
             email: email.value
         }
         if(selectOption.value==="post"){
+            document.cookie = "status=Thêm mới"
+            const isConfirm = confirm(`Bạn có chắc chắn muốn thêm`);
+            if(isConfirm){
             axios.post("https://60becf8e6035840017c17a48.mockapi.io/users",postApi)
                 .then((respon)=>{location.reload();})     
+            }
         }else if(selectOption.value==="put"){
+            document.cookie = "status=Cập nhật"
+            const isConfirm = confirm(`Bạn có chắc chắn muốn sửa id ${id.value}`);
+            if(isConfirm){
             axios.put(`https://60becf8e6035840017c17a48.mockapi.io/users/${id.value}`,postApi)
-                .then((respon)=>{location.reload();})   
+                .then((respon)=>{location.reload();}) 
+            }  
         }else if(selectOption.value==="delete"){
-            axios.delete(`https://60becf8e6035840017c17a48.mockapi.io/users/${id.value}`)
-                .then((respon)=>{location.reload();})   
+            document.cookie = "status=Xóa"
+            const isConfirm = confirm(`Bạn có chắc chắn muốn xóa id ${id.value}`);
+            if(isConfirm){
+                axios.delete(`https://60becf8e6035840017c17a48.mockapi.io/users/${id.value}`)
+                      .then((respon)=>{location.reload();})                
+            }
         }
-
     }else{
         confirm("Vui lòng nhập đủ thông tin");
     }
 })
+
 
 
 
